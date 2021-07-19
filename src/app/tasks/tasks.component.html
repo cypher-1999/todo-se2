@@ -1,0 +1,40 @@
+<!-- <p>tasks works!</p> -->
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h4>Created by {{ userName }}</h4>
+      <hr />
+      <ul class="list-group">
+        <li
+          [ngClass]="{ 'active': id==i+1 }"
+          (click)="toTask(i + 1)"
+          *ngFor="let task of createdBy; let i = index"
+          class="list-group-item home-list-item"
+        >
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h2>{{ i + 1 }}</h2>
+            </div>
+            <div class="col-10">
+              <div class="row">
+                {{ task.taskName }}
+              </div>
+              <div class="row task-extra">
+                <div class="col-6 p-0 task-ass">
+                  Assigned to:<span class="task-ass-user"> User</span>
+                </div>
+                <div class="col-6 task-ass">
+                  Scheduled:<span class="task-ass-date"> Date</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Add a Task</h1>
+  <form (ngSubmit)="addTask()" #addTaskForm="ngForm">
+    <div class="form-group">
+      <label for="taskName">Task Name:</label>
+      <input ngModel type="text" name="taskName" id="taskName" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="assignee">Assign to:</label>
+      <select ngModel name="assignee" id="assignee" class="form-control">
+        <option *ngFor="let u of users" value="{{u.email}}" >{{u.firstName}} {{u.lastName}}</option>
+        
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="scheduledDate">Scheduled Date:</label>
+      <input ngModel
+       type="date" min="2021-07-06" name="scheduledDate" id="scheduledDate" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">Add Task</button>
+  </form>
+</div>

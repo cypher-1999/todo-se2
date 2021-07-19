@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+        <h4>Created by {{userName}}</h4>
+        <hr>
+        <ul class="list-group">
+
+            <li (click)="toTask(i+1)"  *ngFor="let task of createdBy;let i=index" class="list-group-item home-list-item">
+                <div class="row align-items-center">
+                    <div class="col-2"><h2>{{i+1}}</h2></div>
+                    <div class="col-10" >
+                      <div class="row">
+                          {{task.taskName}}
+                      </div>
+                      <div class="row task-extra">
+                          <div class="col-6 p-0 task-ass">Assigned to:<span class="task-ass-user"> User</span></div>
+                          <div class="col-6 task-ass">Scheduled:<span class="task-ass-date"> Date</span> </div>
+                      </div>
+                    </div>
+                </div>
+            </li>
+            <a [routerLink]="['../tasks']">View More..</a>
+        </ul>
+        
+    </div>
+    <div class="col-4">
+        <h4>Assigned to {{userName}}</h4>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item">Task1</li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <h4>Expired</h4>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item">Task1</li>
+        </ul>
+    </div>
+  </div>
+  
+</div>
